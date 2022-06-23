@@ -14,16 +14,35 @@
     <h2>{{msg}}</h2>
 
    
-    <h3 class="title1">Complete order</h3>
+    <h3 class="title1">Pizza details</h3>
     <div >
-        <form  action="/saveorder/" method="post"  >
+        <form  action="/savepizza/" method="post"  >
            {% csrf_token %}
            <div >
-            <label class="col-sm-2 control-label">Customer name</label>
-            <div class="col-sm-8">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="customers">
-                {% for y in customer %}
-                  <option value="{{ y.id }}">{{ y.customer_name }}</option>
+            <label class="col-sm-2 control-label">base</label>
+          
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bases">
+                {% for y in base %}
+                  <option value="{{ y.id }}">{{ y.base_description }}</option>
+                {% endfor %}
+            </select>
+          </div>
+          <div >
+            <label class="col-sm-2 control-label">size</label>
+          
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="sizes">
+                {% for y in size %}
+                  <option value="{{ y.id }}">{{ y.size_description }}</option>
+                {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div >
+            <label class="col-sm-2 control-label">Topping</label>
+          
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="toppings">
+                {% for y in topping %}
+                  <option value="{{ y.id }}">{{ y.topping_description }}</option>
                 {% endfor %}
             </select>
           </div>
@@ -31,9 +50,9 @@
                
            
             <div class="mb-3 "  >
-                <label for="exampleFormControlInput1" class="form-label"> Date</label>
+                <label for="exampleFormControlInput1" class="form-label"> price</label>
               
-                    <input type="datetime-local" class="form-control"  name="datetime">
+                    <input type="text" class="form-control"  name="price">
                 </div>
 <button type="submit">Save</button>
     <!-- Optional JavaScript; choose one of the two! -->

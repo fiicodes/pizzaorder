@@ -14,26 +14,36 @@
     <h2>{{msg}}</h2>
 
    
-    <h3 class="title1">Complete order</h3>
+    <h3 class="title1">Pizza order</h3>
     <div >
-        <form  action="/saveorder/" method="post"  >
+        <form  action="/savepizzaorder/" method="post"  >
            {% csrf_token %}
            <div >
-            <label class="col-sm-2 control-label">Customer name</label>
-            <div class="col-sm-8">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="customers">
-                {% for y in customer %}
-                  <option value="{{ y.id }}">{{ y.customer_name }}</option>
+            <label class="col-sm-2 control-label">pizza</label>
+          
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="pizzas">
+                {% for y in pizza %}
+                  <option value="{{ y.id }}">{{ y.base_id.base_description }}-{{ y.size_id.size_description }}-{{ y.topping_id.topping_description }}</option>
+                {% endfor %}
+            </select>
+          </div>
+          <div >
+            <label class="col-sm-2 control-label">order id </label>
+          
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="orders">
+                {% for y in order %}
+                  <option value="{{ y.id }}">{{ y.id }}</option>
                 {% endfor %}
             </select>
           </div>
         </div>
+        
                
            
             <div class="mb-3 "  >
-                <label for="exampleFormControlInput1" class="form-label"> Date</label>
+                <label for="exampleFormControlInput1" class="form-label"> Quantity</label>
               
-                    <input type="datetime-local" class="form-control"  name="datetime">
+                    <input type="text" class="form-control"  name="quantity">
                 </div>
 <button type="submit">Save</button>
     <!-- Optional JavaScript; choose one of the two! -->

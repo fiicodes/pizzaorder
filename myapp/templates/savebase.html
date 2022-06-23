@@ -11,30 +11,21 @@
     <title>Pizza store</title>
   </head>
   <body>
-    <h2>{{msg}}</h2>
+  
 
-   
-    <h3 class="title1">Complete order</h3>
+   <h6>{{msg}}</h6>
+    <h3 class="title1"> base</h3>
     <div >
-        <form  action="/saveorder/" method="post"  >
+        <form  action="/savebase/" method="post"  >
            {% csrf_token %}
-           <div >
-            <label class="col-sm-2 control-label">Customer name</label>
-            <div class="col-sm-8">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="customers">
-                {% for y in customer %}
-                  <option value="{{ y.id }}">{{ y.customer_name }}</option>
-                {% endfor %}
-            </select>
-          </div>
-        </div>
+           <div class="mb-3 "  >
+            <label for="exampleFormControlInput1" class="form-label"> base</label>
+          
+                <input type="text" class="form-control"  name="description">
+            </div>
                
            
-            <div class="mb-3 "  >
-                <label for="exampleFormControlInput1" class="form-label"> Date</label>
-              
-                    <input type="datetime-local" class="form-control"  name="datetime">
-                </div>
+           
 <button type="submit">Save</button>
     <!-- Optional JavaScript; choose one of the two! -->
 

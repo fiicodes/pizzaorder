@@ -4,11 +4,15 @@ from myapp.models import *
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views import View
 from django.views.generic.edit import View
+from django.views.generic.base import TemplateView
 from django.views import View
 from  myapp.forms import orderForm
 
 
 # Create your views here.
+
+class index(TemplateView):
+    template_name = 'index.html'
 class CustomerView(View):
     
     def get(self,request):
@@ -23,7 +27,7 @@ class CustomerView(View):
         add = customer(customer_name=customer_name,phone=phone,address=address)
                 
         add.save()
-        return HttpResponseRedirect('/savecustomer/')
+        return HttpResponseRedirect('/index/')
 
        
                 
@@ -44,7 +48,7 @@ class OrderView(View):
         add = order(customer_id=customers,order_datetime=orderdatetime)
                 
         add.save()
-        return HttpResponseRedirect('/saveorder/')
+        return HttpResponseRedirect('/index/')
 
            
 
@@ -71,7 +75,7 @@ class PizzaView(View):
         add = pizza(base_id=bases,topping_id=toppings,size_id=sizes,price=price)
                 
         add.save()
-        return HttpResponseRedirect('/savepizza/')
+        return HttpResponseRedirect('/index/')
 
 
 class PizzaOrderView(View):
@@ -95,7 +99,7 @@ class PizzaOrderView(View):
         add = pizzaorder(pizza_id=pizzas,order_id=orders,quantity=quantity)
                 
         add.save()
-        return HttpResponseRedirect('/savepizzaorder/')
+        return HttpResponseRedirect('/index/')
 
 
 
@@ -119,7 +123,7 @@ class ToppingView(View):
             add = topping(topping_description=topping_description)
                     
             add.save()
-            return HttpResponseRedirect('/savetopping/')
+            return HttpResponseRedirect('/index/')
 
 
 
@@ -146,7 +150,7 @@ class SizeView(View):
             add = size(size_description=size_description)
                     
             add.save()
-            return HttpResponseRedirect('/savesize/')
+            return HttpResponseRedirect('/index/')
 
 class BaseView(View):
     
@@ -166,7 +170,7 @@ class BaseView(View):
             add = base(base_description=base_description)
                     
             add.save()
-            return HttpResponseRedirect('/savebase/')
+            return HttpResponseRedirect('/index/')
 
        
                

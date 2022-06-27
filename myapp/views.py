@@ -27,7 +27,7 @@ class CustomerView(View):
         add = customer(customer_name=customer_name,phone=phone,address=address)
                 
         add.save()
-        return HttpResponseRedirect('/index/')
+        return HttpResponseRedirect('/')
 
        
                 
@@ -48,7 +48,7 @@ class OrderView(View):
         add = order(customer_id=customers,order_datetime=orderdatetime)
                 
         add.save()
-        return HttpResponseRedirect('/index/')
+        return HttpResponseRedirect('/')
 
            
 
@@ -75,7 +75,7 @@ class PizzaView(View):
         add = pizza(base_id=bases,topping_id=toppings,size_id=sizes,price=price)
                 
         add.save()
-        return HttpResponseRedirect('/index/')
+        return HttpResponseRedirect('/')
 
 
 class PizzaOrderView(View):
@@ -99,7 +99,7 @@ class PizzaOrderView(View):
         add = pizzaorder(pizza_id=pizzas,order_id=orders,quantity=quantity)
                 
         add.save()
-        return HttpResponseRedirect('/index/')
+        return HttpResponseRedirect('/')
 
 
 
@@ -123,7 +123,7 @@ class ToppingView(View):
             add = topping(topping_description=topping_description)
                     
             add.save()
-            return HttpResponseRedirect('/index/')
+            return HttpResponseRedirect('/')
 
 
 
@@ -150,7 +150,7 @@ class SizeView(View):
             add = size(size_description=size_description)
                     
             add.save()
-            return HttpResponseRedirect('/index/')
+            return HttpResponseRedirect('/')
 
 class BaseView(View):
     
@@ -170,7 +170,7 @@ class BaseView(View):
             add = base(base_description=base_description)
                     
             add.save()
-            return HttpResponseRedirect('/index/')
+            return HttpResponseRedirect('/')
 
        
                

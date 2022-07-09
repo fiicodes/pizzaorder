@@ -13,7 +13,7 @@ pip install mysqlclient
 ````bash
 pip install djangorestframework
 ````
-## REST API endpoinrs for customer and order table  are below
+## REST API endpoints for customer and order table  are below
 
 # /api/customers
 

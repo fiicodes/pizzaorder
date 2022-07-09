@@ -2,7 +2,7 @@
 
 A simple django app to save customer order using mysql database.
 
-#Installation
+# Installation
 ````bash
 pip install django
 ````
@@ -13,25 +13,25 @@ pip install mysqlclient
 ````bash
 pip install djangorestframework
 ````
-##API
+## API
 
-#/api/customers
+# /api/customers
 
 GET : Get all customers
 POST : Create a new customer
 
-#/api/customers/:id
+# /api/customers/:id
 GET : Get a customer
 PUT : Update a customer
 DELETE : Delete a customer
 
 
-#/api/orders
+# /api/orders
 
 GET : Get all orders
 POST : Create a new order
 
-#/api/orders/:id
+# /api/orders/:id
 GET : Get a order
 PUT : Update a order
 DELETE : Delete a order

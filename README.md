@@ -13,26 +13,46 @@ pip install mysqlclient
 ````bash
 pip install djangorestframework
 ````
-## API
+## REST API endpoinrs for customer and order table  are below
 
 # /api/customers
 
 GET : Get all customers
+
+
 POST : Create a new customer
 
+
 # /api/customers/:id
+
+
 GET : Get a customer
+
+
 PUT : Update a customer
+
+
 DELETE : Delete a customer
+
+
 
 
 # /api/orders
 
 GET : Get all orders
+
+
 POST : Create a new order
 
+
 # /api/orders/:id
+
+
 GET : Get a order
+
+
 PUT : Update a order
+
+
 DELETE : Delete a order
 
